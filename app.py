@@ -9,8 +9,8 @@ nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('wordnet')
 
-# model_st = SentenceTransformer('nli-roberta-base')
-# model = load_model('moviereview.h5')
+model_st = SentenceTransformer('nli-roberta-base')
+model = load_model('moviereview.h5')
 
 def cleanText(text):
     STOPWORDS = nltk.corpus.stopwords.words('english')
@@ -34,9 +34,8 @@ app = Flask(__name__)
 def home():
     if request.method == 'POST':
         review = request.form['review']
-        # review_ebd = processText(review)
-        # pred_prob = model.predict(review_ebd)[0][0]
-        pred_prob = 0.6
+        review_ebd = processText(review)
+        pred_prob = model.predict(review_ebd)[0][0]
         prediction = 'Positive' if pred_prob >= 0.5 else 'Negative'
         result = {'prediction' : prediction, 'review' : review, 'pred_prob' : pred_prob if prediction is 'Positive' else 1-pred_prob}
         return render_template('home.html', result=result)
