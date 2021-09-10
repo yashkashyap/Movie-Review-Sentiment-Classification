@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head %}
+  <title>Movie Review Sentiment Prediction</title>
+{% endblock %}
+
+{% block content %}
+  <h1><em>Movie Review Sentiment Prediction</em></h1>
+  <form method="post">
+    <label for="review">Enter the review:</label>
+    <br>
+    <textarea name="review" rows="8" cols="80"></textarea>
+    <br>
+    <button type="submit" name="submit">Check Sentiment</button>
+  </form>
+  <hr>
+  <p>
+    {% if result %}
+      Review : {{ result['review'] }} <br>
+      Sentiment : {{ result['prediction'] }} ({{ result['pred_prob'] }})
+    {% endif %}
+  </p>
+  <a href="{{ url_for('about') }}">About</a>
+{% endblock %}

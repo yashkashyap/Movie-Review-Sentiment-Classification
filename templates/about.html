@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>About</title>
+{% endblock %}
+
+{% block content %}
+  <h1><em>About</em></h1>
+  <p>
+    <em><strong>About the Developer:</strong></em><br>
+    Yash Kashyap <br>
+    21 <br>
+    B.Sc. Computer Science Graduate <br>
+    <em>E-mail:</em> yashkashyap799@gmail.com <br>
+    <em>Github username:</em> yashkashyap
+  </p>
+  <hr>
+  <p>
+    <em><strong>About the Project:</strong></em><br>
+    <em>Task:</em> Predicting the sentiment for movie reviews (Positive, Negative).<br>
+    <ul>
+      <em>About the model:</em>
+      <li>Accuracy: 81%</li>
+      <li>"sentence_transformers" library in python provides implementations for bert, glove and many similar models. The model user here is nli-roberta-base which gives 768 features for each sentence.</li>
+    </ul>
+    <ul>
+      <em>Observations and Conclusions:</em>
+      <li>GloVe embeddings used explicitly did not generalise on the dataset to give good results.</li>
+      <li>GoogleNewsVectors pretrained embeddings were too much for my pc to handle.</li>
+    </ul>
+  </p>
+  <hr>
+  <p>
+    Thanks!
+  </p>
+  <a href="{{ url_for('home') }}">Back home << </a>
+{% endblock %}
