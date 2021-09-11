@@ -3,7 +3,7 @@
 <p>
 	Here is how it would look after deployment. However, I could not find a way to deploy the model due to large slug size.
 	<br>
-	<img src="sample/possample.png">
+	<img src="samples/possample.png">
 	<br>
-	<img src="sample/negsample.png">
+	<img src="samples/negsample.png">
 </p>
